@@ -77,6 +77,9 @@ if __name__ == "__main__":
 
     input_shape = X_train[0].shape
 
+    print(X_train.shape)
+    print(input_shape)
+
     model = Sequential()
     model.add(Conv2D(32, (3, 3), padding='same',
                      input_shape=input_shape))
@@ -100,6 +103,7 @@ if __name__ == "__main__":
     model.compile(loss='categorical_crossentropy',
                   optimizer='SGD',
                   metrics=['accuracy'])
+    model.summary()
     history = model.fit(X_train, y_train, batch_size=5, epochs=100, validation_data=(X_test, y_test), verbose = 0)
     plt.plot(history.history['acc'])
     plt.plot(history.history['val_acc'])

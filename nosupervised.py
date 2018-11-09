@@ -88,7 +88,7 @@ def kmeans(r_dataset, img_path, save_dir):
 
 if __name__ == "__main__":
     img_dir = "trimmed_imgs/4-0"
-    save_dir = "nosupervised"
+    save_dir = "unsupervised"
     dataset = make_dataset(img_dir)
     r_dataset = pca(dataset)
     kmeans(r_dataset, img_dir, save_dir)
